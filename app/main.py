@@ -6,9 +6,10 @@ from pathlib import Path
 os.environ.pop("LUCIDOC_MOCK_LLM", None)
 
 # Add project root directory to python path
-project_root = Path(__file__).parent.parent
-if str(project_root) not in sys.path:
-    sys.path.insert(0, str(project_root))
+project_root = Path(__file__).resolve().parent.parent
+project_root_str = str(project_root)
+if project_root_str not in sys.path:
+    sys.path.insert(0, project_root_str)
 
 from dotenv import load_dotenv
 load_dotenv(project_root / ".env")

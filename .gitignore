@@ -21,7 +21,6 @@ htmlcov/
 
 # Session Data & Storage
 data/
-session/
 models/
 scratch/
 chroma_db/

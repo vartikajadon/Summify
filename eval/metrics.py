@@ -8,9 +8,10 @@ from pathlib import Path
 from typing import List, Dict, Any
 
 # Ensure project root is on PYTHONPATH
-project_root = Path(__file__).parent.parent
-if str(project_root) not in sys.path:
-    sys.path.insert(0, str(project_root))
+project_root = Path(__file__).resolve().parent.parent
+project_root_str = str(project_root)
+if project_root_str not in sys.path:
+    sys.path.insert(0, project_root_str)
 
 # Fix Windows console UTF-8 output
 if sys.platform == "win32":
