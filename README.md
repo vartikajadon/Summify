@@ -103,6 +103,32 @@ pytest tests/ -v
 
 ---
 
+## Cloud Deployment Guide
+
+### Why Vercel Fails for Streamlit
+Vercel is designed for **Serverless Functions** (FastAPI, Flask, Next.js) that export a `handler` or `app` object. **Streamlit** requires a persistent Python process with active WebSocket connections (`streamlit run app/main.py`), which Vercel Serverless Functions do not support.
+
+### Recommended Free Deployment Options
+
+#### Option 1: Streamlit Community Cloud (Recommended — Free & 1-Click)
+1. Go to [share.streamlit.io](https://share.streamlit.io/) and log in with GitHub.
+2. Click **New app** and select repository: `vartikajadon/Summify`.
+3. Set **Main file path** to: `app/main.py`.
+4. Under **Advanced settings -> Secrets**, add your API key:
+   ```toml
+   GROQ_API_KEY = "your_groq_api_key_here"
+   ```
+5. Click **Deploy!**
+
+#### Option 2: Render.com (Free Web Service)
+1. Create a free account at [render.com](https://render.com).
+2. Create a **New Web Service** connected to `vartikajadon/Summify`.
+3. Set **Build Command**: `pip install -r requirements.txt`
+4. Set **Start Command**: `streamlit run app/main.py --server.port $PORT --server.address 0.0.0.0`
+5. Add Environment Variable: `GROQ_API_KEY`.
+
+---
+
 ## Docker Deployment
 
 Build and run Summify in a reproducible container:
