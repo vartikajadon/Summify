@@ -1,0 +1,35 @@
+# Lucidoc Configuration File
+
+# LLM Provider: 'groq' or 'ollama'
+provider: groq
+
+# LLM Model Name
+# Note: Confirm the active open access model name at https://console.groq.com/docs/models before running live API calls.
+# Recommended defaults:
+# - Groq: 'llama-3.3-70b-versatile' or 'openai/gpt-oss-20b' or 'mixtral-8x7b-32768'
+# - Ollama: 'qwen3:8b'
+model: openai/gpt-oss-20b
+
+# Max generation tokens default
+max_tokens: 1024
+
+# Chunking defaults
+chunking:
+  max_chunk_tokens: 500
+  overlap_ratio: 0.15
+
+# Pipeline thresholds
+thresholds:
+  dedup_similarity: 0.85
+  classifier_confidence: 0.80
+  faithfulness_confidence: 0.80
+
+# Storage locations
+storage:
+  data_root: "./data"
+  cache_dir: "./.cache/llm"
+
+# Embedding settings
+embedding:
+  provider: ollama
+  model: nomic-embed-text
