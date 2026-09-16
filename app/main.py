@@ -198,33 +198,104 @@ st.markdown("""
         display: none !important;
     }
 
-    /* Secondary Neutral Buttons */
-    .stButton>button {
+    /* Secondary Neutral Buttons & Download Buttons */
+    .stButton>button,
+    .stDownloadButton>button,
+    .stDownloadButton>a,
+    [data-testid="stDownloadButton"] button,
+    [data-testid="stDownloadButton"] a,
+    [data-testid="stBaseButton-secondary"],
+    [data-testid="stElementContainer"] .stDownloadButton button,
+    [data-testid="stElementContainer"] .stDownloadButton a {
         background-color: #FFFFFF !important;
-        color: #334155 !important;
+        color: #1E293B !important;
         border: 1px solid #CBD5E1 !important;
         border-radius: 10px !important;
         font-weight: 600 !important;
         padding: 8px 18px !important;
         box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05) !important;
         transition: all 0.15s ease !important;
+        text-decoration: none !important;
+        display: inline-flex !important;
+        align-items: center !important;
+        justify-content: center !important;
     }
 
-    .stButton>button:hover {
+    .stButton>button:hover,
+    .stDownloadButton>button:hover,
+    .stDownloadButton>a:hover,
+    [data-testid="stDownloadButton"] button:hover,
+    [data-testid="stDownloadButton"] a:hover,
+    [data-testid="stBaseButton-secondary"]:hover,
+    [data-testid="stElementContainer"] .stDownloadButton button:hover,
+    [data-testid="stElementContainer"] .stDownloadButton a:hover {
         background-color: #F8FAFC !important;
-        color: #0F172A !important;
-        border-color: #94A3B8 !important;
+        color: #2563EB !important;
+        border-color: #2563EB !important;
+        box-shadow: 0 2px 6px 0 rgba(37, 99, 235, 0.1) !important;
     }
 
-    .stButton>button[type="primary"] {
+    .stButton>button p,
+    .stButton>button span,
+    .stButton>button div,
+    .stDownloadButton>button p,
+    .stDownloadButton>button span,
+    .stDownloadButton>button div,
+    .stDownloadButton>a p,
+    .stDownloadButton>a span,
+    .stDownloadButton>a div,
+    [data-testid="stDownloadButton"] p,
+    [data-testid="stDownloadButton"] span,
+    [data-testid="stDownloadButton"] div,
+    [data-testid="stBaseButton-secondary"] p,
+    [data-testid="stBaseButton-secondary"] span,
+    [data-testid="stBaseButton-secondary"] div {
+        color: #1E293B !important;
+        font-weight: 600 !important;
+    }
+
+    .stButton>button:hover p,
+    .stButton>button:hover span,
+    .stButton>button:hover div,
+    .stDownloadButton>button:hover p,
+    .stDownloadButton>button:hover span,
+    .stDownloadButton>button:hover div,
+    .stDownloadButton>a:hover p,
+    .stDownloadButton>a:hover span,
+    .stDownloadButton>a:hover div,
+    [data-testid="stDownloadButton"]:hover p,
+    [data-testid="stDownloadButton"]:hover span,
+    [data-testid="stDownloadButton"]:hover div,
+    [data-testid="stBaseButton-secondary"]:hover p,
+    [data-testid="stBaseButton-secondary"]:hover span,
+    [data-testid="stBaseButton-secondary"]:hover div {
+        color: #2563EB !important;
+    }
+
+    /* Primary Accent Buttons */
+    .stButton>button[type="primary"],
+    .stDownloadButton>button[type="primary"],
+    [data-testid="stBaseButton-primary"] {
         background: linear-gradient(135deg, #2563EB 0%, #1D4ED8 100%) !important;
         color: #FFFFFF !important;
         border: none !important;
         box-shadow: 0 2px 4px 0 rgba(37, 99, 235, 0.2) !important;
     }
 
-    .stButton>button[type="primary"]:hover {
+    .stButton>button[type="primary"] p,
+    .stButton>button[type="primary"] span,
+    .stButton>button[type="primary"] div,
+    [data-testid="stBaseButton-primary"] p,
+    [data-testid="stBaseButton-primary"] span,
+    [data-testid="stBaseButton-primary"] div {
+        color: #FFFFFF !important;
+    }
+
+    .stButton>button[type="primary"]:hover,
+    .stDownloadButton>button[type="primary"]:hover,
+    [data-testid="stBaseButton-primary"]:hover {
         background: linear-gradient(135deg, #1D4ED8 0%, #1E40AF 100%) !important;
+        color: #FFFFFF !important;
         box-shadow: 0 4px 12px 0 rgba(37, 99, 235, 0.3) !important;
     }
 
